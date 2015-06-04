@@ -10,11 +10,10 @@
 		03AE92531B20539000F115B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AE92521B20539000F115B5 /* main.m */; };
 		03AE92561B20539000F115B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AE92551B20539000F115B5 /* AppDelegate.m */; };
 		03AE92591B20539000F115B5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AE92581B20539000F115B5 /* ViewController.m */; };
-		03AE925C1B20539000F115B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AE925A1B20539000F115B5 /* Main.storyboard */; };
 		03AE925E1B20539000F115B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AE925D1B20539000F115B5 /* Images.xcassets */; };
 		03AE92611B20539000F115B5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AE925F1B20539000F115B5 /* LaunchScreen.xib */; };
 		03AE926D1B20539000F115B5 /* UIView_AutoFlowLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AE926C1B20539000F115B5 /* UIView_AutoFlowLayoutTests.m */; };
-		03AE92791B2053AA00F115B5 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AE92781B2053AA00F115B5 /* UIView+AutoLayout.m */; };
+		03B4682F1B20547B00BE244C /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B4682E1B20547B00BE244C /* UIView+AutoLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,14 +34,13 @@
 		03AE92551B20539000F115B5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		03AE92571B20539000F115B5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		03AE92581B20539000F115B5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		03AE925B1B20539000F115B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03AE925D1B20539000F115B5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		03AE92601B20539000F115B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		03AE92661B20539000F115B5 /* UIView+AutoFlowLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIView+AutoFlowLayoutTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AE926B1B20539000F115B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03AE926C1B20539000F115B5 /* UIView_AutoFlowLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIView_AutoFlowLayoutTests.m; sourceTree = "<group>"; };
-		03AE92771B2053AA00F115B5 /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
-		03AE92781B2053AA00F115B5 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
+		03B4682D1B20547B00BE244C /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
+		03B4682E1B20547B00BE244C /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +82,11 @@
 		03AE924F1B20539000F115B5 /* UIView+AutoFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
-				03AE92761B2053AA00F115B5 /* lib */,
+				03B4682C1B20547B00BE244C /* lib */,
 				03AE92541B20539000F115B5 /* AppDelegate.h */,
 				03AE92551B20539000F115B5 /* AppDelegate.m */,
 				03AE92571B20539000F115B5 /* ViewController.h */,
 				03AE92581B20539000F115B5 /* ViewController.m */,
-				03AE925A1B20539000F115B5 /* Main.storyboard */,
 				03AE925D1B20539000F115B5 /* Images.xcassets */,
 				03AE925F1B20539000F115B5 /* LaunchScreen.xib */,
 				03AE92501B20539000F115B5 /* Supporting Files */,
@@ -123,13 +120,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		03AE92761B2053AA00F115B5 /* lib */ = {
+		03B4682C1B20547B00BE244C /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				03AE92771B2053AA00F115B5 /* UIView+AutoLayout.h */,
-				03AE92781B2053AA00F115B5 /* UIView+AutoLayout.m */,
+				03B4682D1B20547B00BE244C /* UIView+AutoLayout.h */,
+				03B4682E1B20547B00BE244C /* UIView+AutoLayout.m */,
 			);
-			path = lib;
+			name = lib;
+			path = ../../lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +210,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03AE925C1B20539000F115B5 /* Main.storyboard in Resources */,
 				03AE92611B20539000F115B5 /* LaunchScreen.xib in Resources */,
 				03AE925E1B20539000F115B5 /* Images.xcassets in Resources */,
 			);
@@ -233,7 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03AE92591B20539000F115B5 /* ViewController.m in Sources */,
-				03AE92791B2053AA00F115B5 /* UIView+AutoLayout.m in Sources */,
+				03B4682F1B20547B00BE244C /* UIView+AutoLayout.m in Sources */,
 				03AE92561B20539000F115B5 /* AppDelegate.m in Sources */,
 				03AE92531B20539000F115B5 /* main.m in Sources */,
 			);
@@ -258,14 +255,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		03AE925A1B20539000F115B5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				03AE925B1B20539000F115B5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		03AE925F1B20539000F115B5 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -430,6 +419,7 @@
 				03AE92721B20539000F115B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03AE92731B20539000F115B5 /* Build configuration list for PBXNativeTarget "UIView+AutoFlowLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +428,7 @@
 				03AE92751B20539000F115B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
