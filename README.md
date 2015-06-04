@@ -14,8 +14,11 @@ This is a small tool to add subview(s) using AutoLayout. This tool is good at bu
 
 ## Features
 1.Working without CGRect
+
 2.You can easily Layout Nib views
+
 3.Make you layout code more clear
+
 4.Dendriform logic for subviews
 
 ## Installation
@@ -34,4 +37,4 @@ This is a small tool to add subview(s) using AutoLayout. This tool is good at bu
 
 ## License
 
-MarkdownEditing is released under the [MIT License][opensource].
+AutoFlowLayout is released under the [MIT License][opensource].
