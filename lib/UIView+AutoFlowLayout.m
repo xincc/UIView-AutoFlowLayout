@@ -93,7 +93,9 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
         [self layoutIfNeeded];
         
         // !NOT RECOMMEND using this method to layout subviews of UIScrollView.
-        // !Infact, the scrollview will behaviour like a UIView.
+        // !Infact, the scrollview will behaviour like a UIView except seting ContentSize manually.
+        // !Make sure the scrollview can layout with a determinate bounds.
+        // !Maybe you should add it to it's super view first.
         
         NSAssert(CGRectGetHeight(self.bounds)&&CGRectGetWidth(self.bounds), @"CCAutoLayout Error: Require superview's bounds.");
         
