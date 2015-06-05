@@ -19,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"UIView";
+
     // Do any additional setup after loading the view, typically from a nib.
     
     //bg view

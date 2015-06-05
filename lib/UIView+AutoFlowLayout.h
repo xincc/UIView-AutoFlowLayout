@@ -65,7 +65,6 @@ UIKIT_EXTERN ALMargin ALMarginMakeBottom(CGFloat b);
 /* Make a margin from `(0, 0, 0, 0)'. */
 UIKIT_EXTERN ALMargin ALMarginZero();
 
-
 /**
  *  Flow layout direction
  */

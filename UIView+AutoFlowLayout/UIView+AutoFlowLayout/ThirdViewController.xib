@@ -53,7 +53,7 @@
                 <constraint firstItem="OkA-Q5-40C" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="amh-tp-3Ls"/>
                 <constraint firstAttribute="bottom" secondItem="OkA-Q5-40C" secondAttribute="bottom" id="vDI-hn-vTw"/>
             </constraints>
-            <point key="canvasLocation" x="97" y="315"/>
+            <point key="canvasLocation" x="-61" y="320"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -47,6 +47,7 @@ ALMargin  ALMarginZero(){
     return ALMarginMake(0.f, 0.f, 0.f, 0.f);
 }
 
+
 @implementation UIView (AutoFlowLayout)
 
 
@@ -59,7 +60,7 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
     view.translatesAutoresizingMaskIntoConstraints = NO;
 
     if(!view || !view.superview) return;
-    
+
     [view layoutIfNeeded];
     
     //clear superview's constrants related self
@@ -77,6 +78,7 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
     [view removeFromSuperview];
 }
 
+
 - (void)addConstraintToView:(UIView*)view withMargin:(ALMargin)margin
 {
     NSDictionary * dic     = @{@"view":view};
@@ -92,16 +94,16 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
     if ([self isKindOfClass:UIScrollView.class]) {
         [self layoutIfNeeded];
         
-        // !NOT RECOMMEND using this method to layout subviews of UIScrollView.
-        // !Infact, the scrollview will behaviour like a UIView except seting ContentSize manually.
-        // !Make sure the scrollview can layout with a determinate bounds.
-        // !Maybe you should add it to it's super view first.
+        // [!] NOT RECOMMEND using this method to layout subviews of UIScrollView.
+        // [!] Infact, the scrollview will behaviour as a UIView except seting ContentSize manually.
+        // [!] Make sure the scrollview can layout with a determinate bounds.
+        // [!] Maybe you should add it to it's super view first.
         
         NSAssert(CGRectGetHeight(self.bounds)&&CGRectGetWidth(self.bounds), @"CCAutoLayout Error: Require superview's bounds.");
         
-        formatH = [NSString stringWithFormat:@"|-left-[view(%f)]-right-|",CGRectGetWidth(self.bounds)-margin.LeftMargin-margin.RightMargin];
-        formatV = [NSString stringWithFormat:@"V:|-top-[view(%f)]-bottom-|",CGRectGetHeight(self.bounds)-margin.TopMargin-margin.BottomMargin];
-        
+        formatH = [NSString stringWithFormat:@"|-left-[view(%f@%f)]-right-|",CGRectGetWidth(self.bounds)-margin.LeftMargin-margin.RightMargin,UILayoutPriorityDefaultHigh];
+        formatV = [NSString stringWithFormat:@"V:|-top-[view(%f@%f)]-bottom-|",CGRectGetHeight(self.bounds)-margin.TopMargin-margin.BottomMargin,UILayoutPriorityDefaultHigh];
+
     } else {
         formatH = @"|-left-[view]-right-|";
         formatV = @"V:|-top-[view]-bottom-|";

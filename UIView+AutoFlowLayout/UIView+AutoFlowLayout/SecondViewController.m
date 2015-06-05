@@ -18,14 +18,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"ScrollView";
+
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = UIColor.blueColor;
     UIScrollView * view = [[UIScrollView alloc] initWithFrame:CGRectZero];
-    view.backgroundColor = UIColor.blueColor;
-    [self.view addSubview:view fillByMargin:ALMarginZero()];
+    view.backgroundColor = UIColor.yellowColor;
+    [self.view addSubview:view fillByMargin:ALMarginMakeLeft(100)];
     
     UIView * sView = [[UIView alloc] initWithFrame:CGRectZero];
     sView.backgroundColor = UIColor.blackColor;
-    [view addSubview:sView fillByMargin:ALMarginMakeLeft(50)];
+    [view addSubview:sView fillByMargin:ALMarginZero()];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,7 +48,11 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self.navigationController pushViewController:[[ThirdViewController alloc] init] animated:YES];
+//    [self.navigationController pushViewController:[[ThirdViewController alloc] init] animated:YES];
 }
+
+
+
+
 
 @end
