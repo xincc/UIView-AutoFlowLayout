@@ -13,7 +13,7 @@
 		03AE925E1B20539000F115B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AE925D1B20539000F115B5 /* Images.xcassets */; };
 		03AE92611B20539000F115B5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AE925F1B20539000F115B5 /* LaunchScreen.xib */; };
 		03AE926D1B20539000F115B5 /* UIView_AutoFlowLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AE926C1B20539000F115B5 /* UIView_AutoFlowLayoutTests.m */; };
-		03B4682F1B20547B00BE244C /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B4682E1B20547B00BE244C /* UIView+AutoLayout.m */; };
+		03B4682F1B20547B00BE244C /* UIView+AutoFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B4682E1B20547B00BE244C /* UIView+AutoFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,8 @@
 		03AE92661B20539000F115B5 /* UIView+AutoFlowLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIView+AutoFlowLayoutTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AE926B1B20539000F115B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03AE926C1B20539000F115B5 /* UIView_AutoFlowLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIView_AutoFlowLayoutTests.m; sourceTree = "<group>"; };
-		03B4682D1B20547B00BE244C /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
-		03B4682E1B20547B00BE244C /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
+		03B4682D1B20547B00BE244C /* UIView+AutoFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoFlowLayout.h"; sourceTree = "<group>"; };
+		03B4682E1B20547B00BE244C /* UIView+AutoFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoFlowLayout.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,8 +123,8 @@
 		03B4682C1B20547B00BE244C /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				03B4682D1B20547B00BE244C /* UIView+AutoLayout.h */,
-				03B4682E1B20547B00BE244C /* UIView+AutoLayout.m */,
+				03B4682D1B20547B00BE244C /* UIView+AutoFlowLayout.h */,
+				03B4682E1B20547B00BE244C /* UIView+AutoFlowLayout.m */,
 			);
 			name = lib;
 			path = ../../lib;
@@ -230,7 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03AE92591B20539000F115B5 /* ViewController.m in Sources */,
-				03B4682F1B20547B00BE244C /* UIView+AutoLayout.m in Sources */,
+				03B4682F1B20547B00BE244C /* UIView+AutoFlowLayout.m in Sources */,
 				03AE92561B20539000F115B5 /* AppDelegate.m in Sources */,
 				03AE92531B20539000F115B5 /* main.m in Sources */,
 			);

@@ -20,7 +20,7 @@
 // THE SOFTWARE.
 
 
-#import "UIView+AutoLayout.h"
+#import "UIView+AutoFlowLayout.h"
 
 ALMargin ALMarginMake(CGFloat l,CGFloat r, CGFloat t, CGFloat b){
     ALMargin  res ;
@@ -47,7 +47,7 @@ ALMargin  ALMarginZero(){
     return ALMarginMake(0.f, 0.f, 0.f, 0.f);
 }
 
-@implementation UIView (AutoLayout)
+@implementation UIView (AutoFlowLayout)
 
 
 #pragma mark -
@@ -79,13 +79,12 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
 
 - (void)addConstraintToView:(UIView*)view withMargin:(ALMargin)margin
 {
-    NSDictionary * dic = @{@"view":view};
-    NSDictionary * metrics = @{
-                               @"left":     @(margin.LeftMargin),
+    NSDictionary * dic     = @{@"view":view};
+
+    NSDictionary * metrics = @{@"left":     @(margin.LeftMargin),
                                @"right":    @(margin.RightMargin),
                                @"top":      @(margin.TopMargin),
-                               @"bottom":   @(margin.BottomMargin)
-                               };
+                               @"bottom":   @(margin.BottomMargin)};
     
     NSString * formatH = @"|-left-[view]-right-|";
     NSString * formatV = @"V:|-top-[view]-bottom-|";
@@ -123,7 +122,6 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
     [self addConstraintToView:view withMargin:margin];
 }
 
-
 #pragma mark -
 #pragma mark - Flow Layout
 
@@ -135,8 +133,8 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
         return;
     }
     NSMutableDictionary * items = [NSMutableDictionary dictionary];
-    NSMutableString * formartH = [NSMutableString stringWithFormat:@""];
-    NSMutableString * formartV = [NSMutableString stringWithFormat:@""];
+    NSMutableString * formartH  = [NSMutableString stringWithFormat:@""];
+    NSMutableString * formartV  = [NSMutableString stringWithFormat:@""];
     
     //get layout data
     NSMutableArray * orderedKey = [NSMutableArray arrayWithCapacity:views.count];
@@ -149,13 +147,10 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
         [orderedKey addObject:key];
     }
     
-    
-    NSDictionary * metrics = @{
-                               @"left":     @(margin.LeftMargin),
+    NSDictionary * metrics = @{@"left":     @(margin.LeftMargin),
                                @"right":    @(margin.RightMargin),
                                @"top":      @(margin.TopMargin),
-                               @"bottom":   @(margin.BottomMargin)
-                               };
+                               @"bottom":   @(margin.BottomMargin)};
     
     //config VFL
     
@@ -199,12 +194,14 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
     } else {
         
     }
-    
+
 }
 
 - (void)addSubviews:(NSArray*)views flowLayoutDirection:(ALLayoutDirection)direction fillByMargin:(ALMargin )margin
 {
     [self addSubviews:views flowLayoutDirection:direction fillByMargin:margin interval:0.f];
 }
+
+
 @end
 

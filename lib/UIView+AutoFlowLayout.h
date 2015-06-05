@@ -84,7 +84,7 @@ typedef NS_ENUM(NSInteger, ALLayoutDirection){
     ALLayoutDirectionVertical
 };
 
-@interface UIView (AutoLayout)
+@interface UIView (AutoFlowLayout)
 
 /** ======================================================================== **
  ** These  APIs have implemented Method `addSubview` for instance of UIView  **

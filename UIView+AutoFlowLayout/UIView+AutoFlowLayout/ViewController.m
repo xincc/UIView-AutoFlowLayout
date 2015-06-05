@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "UIView+AutoLayout.h"
+#import "UIView+AutoFlowLayout.h"
 
 @interface ViewController ()
 
@@ -21,10 +21,11 @@
     
     //bg view
     UIView * viewBackGround = [[UIView alloc] initWithFrame:CGRectZero];
+
     viewBackGround.backgroundColor = UIColor.redColor;
     [self.view addSubview:viewBackGround fillByMargin:ALMarginZero()];
 
-    
+
     //clip to two part
     
     UIView * topPart = [[UIView alloc] initWithFrame:CGRectZero];
