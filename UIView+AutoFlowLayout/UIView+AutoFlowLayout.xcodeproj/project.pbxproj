@@ -14,6 +14,9 @@
 		03AE92611B20539000F115B5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AE925F1B20539000F115B5 /* LaunchScreen.xib */; };
 		03AE926D1B20539000F115B5 /* UIView_AutoFlowLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AE926C1B20539000F115B5 /* UIView_AutoFlowLayoutTests.m */; };
 		03B4682F1B20547B00BE244C /* UIView+AutoFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B4682E1B20547B00BE244C /* UIView+AutoFlowLayout.m */; };
+		03E3808E1B217B4000FEBBA0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3808D1B217B4000FEBBA0 /* SecondViewController.m */; };
+		03E380921B217FA700FEBBA0 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E380901B217FA700FEBBA0 /* ThirdViewController.m */; };
+		03E380931B217FA700FEBBA0 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E380911B217FA700FEBBA0 /* ThirdViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,11 @@
 		03AE926C1B20539000F115B5 /* UIView_AutoFlowLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIView_AutoFlowLayoutTests.m; sourceTree = "<group>"; };
 		03B4682D1B20547B00BE244C /* UIView+AutoFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoFlowLayout.h"; sourceTree = "<group>"; };
 		03B4682E1B20547B00BE244C /* UIView+AutoFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoFlowLayout.m"; sourceTree = "<group>"; };
+		03E3808C1B217B4000FEBBA0 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		03E3808D1B217B4000FEBBA0 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		03E3808F1B217FA700FEBBA0 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		03E380901B217FA700FEBBA0 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		03E380911B217FA700FEBBA0 /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,11 @@
 				03AE92551B20539000F115B5 /* AppDelegate.m */,
 				03AE92571B20539000F115B5 /* ViewController.h */,
 				03AE92581B20539000F115B5 /* ViewController.m */,
+				03E3808C1B217B4000FEBBA0 /* SecondViewController.h */,
+				03E3808D1B217B4000FEBBA0 /* SecondViewController.m */,
+				03E3808F1B217FA700FEBBA0 /* ThirdViewController.h */,
+				03E380901B217FA700FEBBA0 /* ThirdViewController.m */,
+				03E380911B217FA700FEBBA0 /* ThirdViewController.xib */,
 				03AE925D1B20539000F115B5 /* Images.xcassets */,
 				03AE925F1B20539000F115B5 /* LaunchScreen.xib */,
 				03AE92501B20539000F115B5 /* Supporting Files */,
@@ -212,6 +225,7 @@
 			files = (
 				03AE92611B20539000F115B5 /* LaunchScreen.xib in Resources */,
 				03AE925E1B20539000F115B5 /* Images.xcassets in Resources */,
+				03E380931B217FA700FEBBA0 /* ThirdViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +243,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03E3808E1B217B4000FEBBA0 /* SecondViewController.m in Sources */,
 				03AE92591B20539000F115B5 /* ViewController.m in Sources */,
+				03E380921B217FA700FEBBA0 /* ThirdViewController.m in Sources */,
 				03B4682F1B20547B00BE244C /* UIView+AutoFlowLayout.m in Sources */,
 				03AE92561B20539000F115B5 /* AppDelegate.m in Sources */,
 				03AE92531B20539000F115B5 /* main.m in Sources */,

@@ -86,8 +86,25 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
                                @"top":      @(margin.TopMargin),
                                @"bottom":   @(margin.BottomMargin)};
     
-    NSString * formatH = @"|-left-[view]-right-|";
-    NSString * formatV = @"V:|-top-[view]-bottom-|";
+    NSString * formatH = [NSString stringWithFormat:@""];
+    NSString * formatV = [NSString stringWithFormat:@""];
+
+    if ([self isKindOfClass:UIScrollView.class]) {
+        
+        // !Not Recommend using this method to layout subviews of UIScrollView.
+        // !Infact, the scrollview will behaviour like a UIView.
+        // !If you use this method to layout subviews of UIScrollView. you must set it's bounds.
+        
+        NSAssert(CGRectGetHeight(self.bounds)&&CGRectGetWidth(self.bounds), @"CCAutoLayout error: When superview is instance of UIScrollView, you should set frame first.");
+        
+        formatH = [NSString stringWithFormat:@"|-left-[view(%f)]-right-|",CGRectGetWidth(self.bounds)-margin.LeftMargin-margin.RightMargin];
+        formatV = [NSString stringWithFormat:@"V:|-top-[view(%f)]-bottom-|",CGRectGetHeight(self.bounds)-margin.TopMargin-margin.BottomMargin];
+        
+    } else {
+        formatH = @"|-left-[view]-right-|";
+        formatV = @"V:|-top-[view]-bottom-|";
+    }
+    
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:formatH options:0 metrics:metrics views:dic]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:formatV options:0 metrics:metrics views:dic]];
 }
@@ -163,7 +180,7 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:formartV options:0 metrics:metrics views:items]];
         
         //`top`,`buttom` space to super view for each subview except first view
-        for (int i = 1; i < orderedKey.count ; i++) {
+        for (int i = 1; i < orderedKey.count; i++) {
             [formartH appendFormat:@"-(%f)-[%@(==%@)]",interval,orderedKey[i],orderedKey[i-1]];
             formartV = [NSMutableString stringWithFormat:@"V:|-top-[%@]-bottom-|",orderedKey[i]];
             [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:formartV options:0 metrics:metrics views:items]];
@@ -182,7 +199,7 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:formartH options:0 metrics:metrics views:items]];
         
         //leading & trailing space to superview for each subview except first view
-        for (int i = 1; i < orderedKey.count ; i++) {
+        for (int i = 1; i < orderedKey.count; i++) {
             [formartV appendFormat:@"-(%f)-[%@(==%@)]",interval,orderedKey[i],orderedKey[i-1]];
             formartH = [NSMutableString stringWithFormat:@"|-left-[%@]-right-|",orderedKey[i]];
             [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:formartH options:0 metrics:metrics views:items]];

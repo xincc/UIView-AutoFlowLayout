@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "UIView+AutoFlowLayout.h"
+#import "SecondViewController.h"
+#import "ThirdViewController.h"
 
 @interface ViewController ()
 
@@ -43,7 +45,7 @@
     topPart2.backgroundColor = UIColor.greenColor;
     topPart3.backgroundColor = UIColor.blueColor;
 
-    [topPart addSubviews:@[topPart1,topPart2,topPart3] flowLayoutDirection:ALLayoutDirectionHorizontal fillByMargin:ALMarginMakeTop(50) interval:10.f];
+    [topPart addSubviews:@[topPart1,topPart2,topPart3] flowLayoutDirection:ALLayoutDirectionHorizontal fillByMargin:ALMarginMakeTop(100) interval:20.f];
     
     //set bottom part
     UIView * bottomPart1 = [[UIView alloc] initWithFrame:CGRectZero];
@@ -66,6 +68,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.navigationController pushViewController:[[SecondViewController alloc] init] animated:YES];
 }
 
 @end
