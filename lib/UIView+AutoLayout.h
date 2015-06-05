@@ -106,12 +106,21 @@ typedef NS_ENUM(NSInteger, ALLayoutDirection){
 /**
  *  Add subviews by Flow Layout
  *
- *  @param views The views to added.
- *  @param direction  Flow layout direction.
- *  @param margin     Consider all view as one view on the superview (This method set interval bettween views as `ZERO`), and make a sute margin item.
+ *  @param views        The views to added.
+ *  @param direction    Flow layout direction.
+ *  @param margin       Consider all view as one view on the superview (This method set interval bettween views as `ZERO`), and make a sute margin item.
  */
 - (void)addSubviews:(NSArray*)views flowLayoutDirection:(ALLayoutDirection)direction fillByMargin:(ALMargin )margin;
 
+/**
+ *  Add subviews by Flow Layout
+ *
+ *  @param views     The views to added.
+ *  @param direction Flow layout direction.
+ *  @param margin    Consider all view as one view on the superview, and make a sute margin item.
+ *  @param interval  Interval bettween views
+ */
+- (void)addSubviews:(NSArray*)views flowLayoutDirection:(ALLayoutDirection)direction fillByMargin:(ALMargin )margin interval:(CGFloat)interval;
 
 @end
 

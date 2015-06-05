@@ -77,14 +77,6 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
     [view removeFromSuperview];
 }
 
-- (void)removeView:(UIView*)view{
-    
-    cleanRemoveFromSuperview(view);
-    if (view.superview == self) {
-        [view removeFromSuperview];
-    }
-}
-
 - (void)addConstraintToView:(UIView*)view withMargin:(ALMargin)margin
 {
     NSDictionary * dic = @{@"view":view};
@@ -107,26 +99,26 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
 
 - (void)addSubview:(UIView*)view fillByMargin:(ALMargin)margin
 {
-    [self removeView:view];
+    cleanRemoveFromSuperview(view);
     [self addSubview:view];
     [self addConstraintToView:view withMargin:margin];
 }
 - (void)insertSubview:(UIView *)view atIndex:(NSInteger)index fillByMargin:(ALMargin)margin
 {
-    [self removeView:view];
+    cleanRemoveFromSuperview(view);
     [self insertSubview:view atIndex:index];
     [self addConstraintToView:view withMargin:margin];
 }
 
 - (void)insertSubview:(UIView *)view aboveSubview:(UIView *)siblingSubview fillByMargin:(ALMargin)margin
 {
-    [self removeView:view];
+    cleanRemoveFromSuperview(view);
     [self insertSubview:view aboveSubview:siblingSubview];
     [self addConstraintToView:view withMargin:margin];
 }
 - (void)insertSubview:(UIView *)view belowSubview:(UIView *)siblingSubview fillByMargin:(ALMargin)margin
 {
-    [self removeView:view];
+    cleanRemoveFromSuperview(view);
     [self insertSubview:view belowSubview:siblingSubview];
     [self addConstraintToView:view withMargin:margin];
 }
@@ -136,7 +128,7 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
 #pragma mark - Flow Layout
 
 
-- (void)addSubviews:(NSArray*)views flowLayoutDirection:(ALLayoutDirection)direction fillByMargin:(ALMargin )margin
+- (void)addSubviews:(NSArray*)views flowLayoutDirection:(ALLayoutDirection)direction fillByMargin:(ALMargin )margin interval:(CGFloat)interval
 {
     if (![views.firstObject isKindOfClass:UIView.class]) {
         NSLog(@"CCAutoLayout error: items should be kind of UIView object and can not be nil");
@@ -176,7 +168,7 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
         
         //`top`,`buttom` space to super view for each subview except first view
         for (int i = 1; i < orderedKey.count ; i++) {
-            [formartH appendFormat:@"[%@(==%@)]",orderedKey[i],orderedKey[i-1]];
+            [formartH appendFormat:@"-(%f)-[%@(==%@)]",interval,orderedKey[i],orderedKey[i-1]];
             formartV = [NSMutableString stringWithFormat:@"V:|-top-[%@]-bottom-|",orderedKey[i]];
             [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:formartV options:0 metrics:metrics views:items]];
         }
@@ -195,7 +187,7 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
         
         //leading & trailing space to superview for each subview except first view
         for (int i = 1; i < orderedKey.count ; i++) {
-            [formartV appendFormat:@"[%@(==%@)]",orderedKey[i],orderedKey[i-1]];
+            [formartV appendFormat:@"-(%f)-[%@(==%@)]",interval,orderedKey[i],orderedKey[i-1]];
             formartH = [NSMutableString stringWithFormat:@"|-left-[%@]-right-|",orderedKey[i]];
             [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:formartH options:0 metrics:metrics views:items]];
         }
@@ -207,6 +199,11 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
         
     }
     
+}
+
+- (void)addSubviews:(NSArray*)views flowLayoutDirection:(ALLayoutDirection)direction fillByMargin:(ALMargin )margin
+{
+    [self addSubviews:views flowLayoutDirection:direction fillByMargin:margin interval:0.f];
 }
 @end
 
