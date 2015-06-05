@@ -42,7 +42,7 @@
     topPart2.backgroundColor = UIColor.greenColor;
     topPart3.backgroundColor = UIColor.blueColor;
 
-    [topPart addSubviews:@[topPart1,topPart2,topPart3] flowLayoutDirection:ALLayoutDirectionHorizontal fillByMargin:ALMarginMakeTop(50)];
+    [topPart addSubviews:@[topPart1,topPart2,topPart3] flowLayoutDirection:ALLayoutDirectionHorizontal fillByMargin:ALMarginMakeTop(50) interval:10.f];
     
     //set bottom part
     UIView * bottomPart1 = [[UIView alloc] initWithFrame:CGRectZero];
@@ -52,7 +52,7 @@
     bottomPart2.backgroundColor = UIColor.yellowColor;
     bottomPart3.backgroundColor = UIColor.purpleColor;
 
-    [bottomPart addSubviews:@[bottomPart1,bottomPart2,bottomPart3] flowLayoutDirection:ALLayoutDirectionVertical fillByMargin:ALMarginMakeRight(50)];
+    [bottomPart addSubviews:@[bottomPart1,bottomPart2,bottomPart3] flowLayoutDirection:ALLayoutDirectionVertical fillByMargin:ALMarginMakeRight(50) interval:10.f];
 
     
 }

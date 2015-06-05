@@ -13,28 +13,32 @@ This is a small tool to add subview(s) using AutoLayout. This tool is good at bu
 * [License](#license)
 
 ## Features
-1.Working without CGRect
 
-2.You can easily Layout Nib views
+-   It's Convenience to fit All Screen for Apple Device include iPhone4,5,6,6p,iPadX and so on.
 
-3.Make you layout code more clear
+-   Working without Frame
 
-4.Dendriform logic for subviews
+-   You can easily Layout Nib views
+
+-   Make you layout code more clear
+
+-   Dendriform logic for subviews
 
 ## Installation
-1.link [UIView+AutoLayout.h]&[UIView+AutoLayout.m] to your project.
+-   link [UIView+AutoLayout.h]&[UIView+AutoLayout.m] to your project.
 
 ## USE
-1.Please look up [UIView+AutoLayout.h] 
+-   Please look up [UIView+AutoLayout.h] 
 
 ## Tips
 
-1.You had best use this small tool to build you UI frame.If you want to add Constraint related same level view, you can use Masory or other project avoid layout too many view on UIWindow. 
+-   You had best use this small tool to build you UI frame.If you want to add Constraint related same level view, you can use Masory or other project avoid layout too many view on UIWindow. 
 
 
 ## Known Bugs
 
+-   Don't suport UIScrollView yet.
 
 ## License
 
-AutoFlowLayout is released under the [MIT License][opensource].
+-   AutoFlowLayout is released under the [MIT License][opensource].
