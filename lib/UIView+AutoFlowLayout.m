@@ -90,12 +90,12 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
     NSString * formatV = [NSString stringWithFormat:@""];
 
     if ([self isKindOfClass:UIScrollView.class]) {
+        [self layoutIfNeeded];
         
-        // !Not Recommend using this method to layout subviews of UIScrollView.
+        // !NOT RECOMMEND using this method to layout subviews of UIScrollView.
         // !Infact, the scrollview will behaviour like a UIView.
-        // !If you use this method to layout subviews of UIScrollView. you must set it's bounds.
         
-        NSAssert(CGRectGetHeight(self.bounds)&&CGRectGetWidth(self.bounds), @"CCAutoLayout error: When superview is instance of UIScrollView, you should set frame first.");
+        NSAssert(CGRectGetHeight(self.bounds)&&CGRectGetWidth(self.bounds), @"CCAutoLayout Error: Require superview's bounds.");
         
         formatH = [NSString stringWithFormat:@"|-left-[view(%f)]-right-|",CGRectGetWidth(self.bounds)-margin.LeftMargin-margin.RightMargin];
         formatV = [NSString stringWithFormat:@"V:|-top-[view(%f)]-bottom-|",CGRectGetHeight(self.bounds)-margin.TopMargin-margin.BottomMargin];
@@ -146,7 +146,7 @@ UIKIT_STATIC_INLINE void cleanRemoveFromSuperview(UIView * view ) {
 - (void)addSubviews:(NSArray*)views flowLayoutDirection:(ALLayoutDirection)direction fillByMargin:(ALMargin )margin interval:(CGFloat)interval
 {
     if (![views.firstObject isKindOfClass:UIView.class]) {
-        NSLog(@"CCAutoLayout error: items should be kind of UIView object and can not be nil");
+        NSLog(@"CCAutoLayout Error: items should be kind of UIView object and can not be nil");
         return;
     }
     NSMutableDictionary * items = [NSMutableDictionary dictionary];
